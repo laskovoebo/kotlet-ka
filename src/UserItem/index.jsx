@@ -4,8 +4,8 @@ import './userItem.css';
 
 class UserItem extends Component {
   handleDelete = () => {
-    const { item: { id } } = this.props;
-    console.log(id);
+    const { item: { id }, onDelete } = this.props;
+    onDelete(id);
   }
 
   render() {
@@ -37,6 +37,7 @@ UserItem.propTypes = {
     name: PropTypes.string,
     count: PropTypes.number,
   }).isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default UserItem;

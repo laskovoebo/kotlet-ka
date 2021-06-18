@@ -10,7 +10,7 @@ const HeaderTable = ({ items }) => {
     <div className="table">
       <UserInfoTable />
       {items.map((item, key) => (
-        <UserItem item={item} key={key} />
+        <UserItem item={item} key={key} onDelete={id => console.log(id)} />
       ))}
     </div>
   );
