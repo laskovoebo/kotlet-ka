@@ -9,9 +9,9 @@ const HeaderTable = ({ items }) => {
   return (
     <div className="table">
       <UserInfoTable />
-      <div className="headerTable">
-        <UserItem />
-      </div>
+      {items.map((item, key) => (
+        <UserItem item={item} key={key} />
+      ))}
     </div>
   );
 };

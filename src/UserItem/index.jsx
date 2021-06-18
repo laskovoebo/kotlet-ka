@@ -1,23 +1,32 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './userItem.css';
 
-const UserItem = () => (
-  <>
+const UserItem = ({ item: { id, name, count } }) => (
+  <div className="headerTable">
     <div className="userItemId">
-      1
+      {id}
     </div>
     <div className="userItemName">
-      laskovoebo
+      {name}
     </div>
     <div className="userItemCount">
-      777
+      {count}
     </div>
     <div className="userDelete">
       <button type="button">
         delete
       </button>
     </div>
-  </>
+  </div>
 );
+
+UserItem.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    count: PropTypes.number,
+  }).isRequired,
+};
 
 export default UserItem;
