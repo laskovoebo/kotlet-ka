@@ -14,6 +14,12 @@ class App extends Component {
     };
   }
 
+  get newId() {
+    const { users } = this.state;
+    const ids = users.map(({ id }) => id).sort((a, b) => a - b);
+    return ids[ids.length - 1] + 1 || 1;
+  }
+
   render() {
     const { users } = this.state;
     return (
