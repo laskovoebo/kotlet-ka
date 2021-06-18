@@ -1,0 +1,21 @@
+.userItemId {
+    border: 1px solid red;
+    width: 250px;
+}
+
+.userItemName {
+    border: 1px solid red;
+    width: 250px;
+}
+
+.userItemCount {
+    border: 1px solid red;
+    width: 250px;
+}
+
+.userDelete {
+    border: 1px solid red;
+    width: 250px;
+    justify-content: center;
+    display: flex;
+}
