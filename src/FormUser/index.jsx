@@ -20,6 +20,9 @@ class FormUser extends Component {
     const { userName } = this.state;
     const { onSubmit } = this.props;
     onSubmit(userName);
+    this.setState({
+      userName: '',
+    });
   }
 
   render() {

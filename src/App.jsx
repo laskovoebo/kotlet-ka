@@ -21,7 +21,17 @@ class App extends Component {
   }
 
   handleSubmit = value => {
-    console.log(value);
+    const { users } = this.state;
+    this.setState({
+      users: [
+        {
+          id: this.newId,
+          name: value,
+          count: 0,
+        },
+        ...users,
+      ],
+    });
   }
 
   render() {
