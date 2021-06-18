@@ -15,6 +15,12 @@ class FormUser extends Component {
     });
   }
 
+  handleClick = () => {
+    const { userName } = this.state;
+    // eslint-disable-next-line no-console
+    console.log(userName);
+  }
+
   render() {
     const { userName } = this.state;
     return (
@@ -23,7 +29,7 @@ class FormUser extends Component {
           UserName:
         </lable>
         <input type="text" value={userName} onChange={this.handleInputChange} />
-        <button className="setUser" type="button">
+        <button className="setUser" type="button" onClick={this.handleClick}>
           Add
         </button>
         <button className="clearAll" type="button">
