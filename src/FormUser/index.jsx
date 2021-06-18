@@ -32,7 +32,12 @@ class FormUser extends Component {
         <lable>
           UserName:
         </lable>
-        <input type="text" value={userName} onChange={this.handleInputChange} />
+        <input
+          type="text"
+          name="userName"
+          value={userName}
+          onChange={this.handleInputChange}
+        />
         <button
           className="setUser"
           type="button"
