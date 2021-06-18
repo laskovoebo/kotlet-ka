@@ -20,12 +20,16 @@ class App extends Component {
     return ids[ids.length - 1] + 1 || 1;
   }
 
+  handleSubmit = value => {
+    console.log(value);
+  }
+
   render() {
     const { users } = this.state;
     return (
       <>
         <HeaderTable items={users} />
-        <FormUser />
+        <FormUser onSubmit={this.handleSubmit} />
       </>
     );
   }

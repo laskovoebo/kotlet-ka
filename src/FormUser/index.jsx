@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './formUser.css';
 
 class FormUser extends Component {
@@ -17,8 +18,8 @@ class FormUser extends Component {
 
   handleClick = () => {
     const { userName } = this.state;
-    // eslint-disable-next-line no-console
-    console.log(userName);
+    const { onSubmit } = this.props;
+    onSubmit(userName);
   }
 
   render() {
@@ -29,7 +30,12 @@ class FormUser extends Component {
           UserName:
         </lable>
         <input type="text" value={userName} onChange={this.handleInputChange} />
-        <button className="setUser" type="button" onClick={this.handleClick}>
+        <button
+          className="setUser"
+          type="button"
+          onClick={this.handleClick}
+          disabled={!userName.length}
+        >
           Add
         </button>
         <button className="clearAll" type="button">
@@ -39,5 +45,9 @@ class FormUser extends Component {
     );
   }
 }
+
+FormUser.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default FormUser;
