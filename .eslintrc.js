@@ -29,6 +29,7 @@ module.exports = {
     'no-param-reassign': ['error', { props: false }],
     'react/style-prop-object': ['off'],
     'global-require': ['off'],
+    'react/prefer-stateless-function': ['off'],
     'react/no-array-index-key': ['off'],
     'react-native/no-inline-styles': ['off'],
     'react/jsx-props-no-spreading': ['off'],
@@ -43,7 +44,7 @@ module.exports = {
     'no-extra-boolean-cast': ['off'],
     'no-return-assign': ['off'],
     'func-names': ['off'],
-    'use-decorator/use-decorator': [1, {
+    'use-decorator/use-decorator': [0, {
       params: [
         {
           name: 'assertParameter',
