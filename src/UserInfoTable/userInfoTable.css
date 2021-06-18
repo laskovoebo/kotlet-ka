@@ -1,0 +1,24 @@
+.userStack {
+    display: flex;
+    justify-content: space-between;
+}
+
+.userId {
+    border: 1px solid black;
+    width: 250px;
+}
+
+.userName {
+    border: 1px solid black;
+    width: 250px;
+}
+
+.userCount {
+    border: 1px solid black;
+    width: 250px;
+}
+
+.userActions {
+    border: 1px solid black;
+    width: 250px;
+}
