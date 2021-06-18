@@ -1,6 +1,7 @@
 import React from 'react';
 import './userItem.css';
 
+// eslint-disable-next-line no-unused-vars
 const UserItem = () => (
   <>
     <div className="userItemId">
