@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './userItem.css';
 
-// eslint-disable-next-line no-unused-vars
 const UserItem = ({ item: { id, name, count } }) => (
   <div className="headerTable">
     <div className="userItemId">
