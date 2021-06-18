@@ -1,10 +1,11 @@
 import React from 'react';
 import './headerTable.css';
-import UserInfoTable from '../UserInfoTable';
+import PropTypes from 'prop-types';
 import UserItem from '../UserItem';
+import UserInfoTable from '../UserInfoTable';
 
-const HeaderTable = () => {
-  console.log('render'); // это просто чтобы был return
+const HeaderTable = ({ items }) => {
+  console.log(items); // это просто чтобы был return
   return (
     <div className="table">
       <UserInfoTable />
@@ -13,6 +14,14 @@ const HeaderTable = () => {
       </div>
     </div>
   );
+};
+
+HeaderTable.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    count: PropTypes.number,
+  })).isRequired,
 };
 
 export default HeaderTable;
