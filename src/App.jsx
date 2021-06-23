@@ -34,11 +34,15 @@ class App extends Component {
     });
   }
 
+  deleteHandle = id => {
+    console.log(id);
+  }
+
   render() {
     const { users } = this.state;
     return (
       <>
-        <HeaderTable items={users} />
+        <HeaderTable items={users} handleDelete={this.deleteHandle} />
         <FormUser onSubmit={this.handleSubmit} />
       </>
     );

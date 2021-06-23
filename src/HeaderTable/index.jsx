@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import UserItem from '../UserItem';
 import UserInfoTable from '../UserInfoTable';
 
-const HeaderTable = ({ items }) => {
+const HeaderTable = ({ items, handleDelete }) => {
   console.log(items); // это просто чтобы был return
   return (
     <div className="table">
       <UserInfoTable />
       {items.map((item, key) => (
-        <UserItem item={item} key={key} onDelete={id => console.log(id)} />
+        <UserItem item={item} key={key} onDelete={handleDelete} />
       ))}
     </div>
   );
@@ -22,6 +22,7 @@ HeaderTable.propTypes = {
     name: PropTypes.string,
     count: PropTypes.number,
   })).isRequired,
+  handleDelete: PropTypes.func.isRequired,
 };
 
 export default HeaderTable;
