@@ -34,7 +34,7 @@ class App extends Component {
     });
   }
 
-  deleteHandle = id => {
+  handleDelete = id => {
     console.log(id);
   }
 
@@ -42,7 +42,7 @@ class App extends Component {
     const { users } = this.state;
     return (
       <>
-        <HeaderTable items={users} handleDelete={this.deleteHandle} />
+        <HeaderTable items={users} handleDelete={this.handleDelete} />
         <FormUser onSubmit={this.handleSubmit} />
       </>
     );
