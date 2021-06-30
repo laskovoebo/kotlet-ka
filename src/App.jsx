@@ -34,8 +34,12 @@ class App extends Component {
     });
   }
 
-  handleDelete = id => {
-    console.log(id);
+  handleDelete = (id) => {
+    const { users } = this.state;
+    const filteredUsers = users.filter(user => user.id !== id);
+    this.setState({
+      users: filteredUsers,
+    });
   }
 
   render() {
