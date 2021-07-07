@@ -51,6 +51,14 @@ class App extends Component {
     });
   }
 
+  handleClearAll = () => {
+    if (window.confirm('Подтвердить действие?')) {
+      this.setState({
+        users: [],
+      });
+    }
+  }
+
   render() {
     const { users } = this.state;
     return (
@@ -60,7 +68,10 @@ class App extends Component {
           handleDelete={this.handleDelete}
           handleCount={this.handleCount}
         />
-        <FormUser onSubmit={this.handleSubmit} />
+        <FormUser
+          onSubmit={this.handleSubmit}
+          clearTable={this.handleClearAll}
+        />
       </>
     );
   }

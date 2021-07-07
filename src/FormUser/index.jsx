@@ -25,6 +25,11 @@ class FormUser extends Component {
     });
   }
 
+  handleClearAll = () => {
+    const { clearTable } = this.props;
+    clearTable();
+  }
+
   render() {
     const { userName } = this.state;
     return (
@@ -46,7 +51,11 @@ class FormUser extends Component {
         >
           Add
         </button>
-        <button className="clearAll" type="button">
+        <button
+          className="clearAll"
+          type="button"
+          onClick={this.handleClearAll}
+        >
           Clear all
         </button>
       </div>
@@ -56,6 +65,7 @@ class FormUser extends Component {
 
 FormUser.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  clearTable: PropTypes.func.isRequired,
 };
 
 export default FormUser;
