@@ -22,16 +22,22 @@ class App extends Component {
 
   handleSubmit = value => {
     const { users } = this.state;
-    this.setState({
-      users: [
-        {
-          id: this.newId,
-          name: value,
-          count: 0,
-        },
-        ...users,
-      ],
-    });
+    const newName = users
+      .some(user => user.name === value);
+    if (newName !== true) {
+      this.setState({
+        users: [
+          {
+            id: this.newId,
+            name: value,
+            count: 0,
+          },
+          ...users,
+        ],
+      });
+    } else {
+      alert('Соси пису, занято');
+    }
   }
 
   handleDelete = (id) => {
