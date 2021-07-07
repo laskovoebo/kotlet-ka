@@ -8,6 +8,11 @@ class UserItem extends Component {
     onDelete(id);
   }
 
+  handleCount = () => {
+    const { item: { id, count }, addCount } = this.props;
+    addCount(id, count);
+  }
+
   render() {
     const { item: { id, name, count } } = this.props;
     return (
@@ -18,7 +23,13 @@ class UserItem extends Component {
         <div className="userItemName">
           {name}
         </div>
-        <div className="userItemCount">
+        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
+        <div
+          className="userItemCount"
+          role="button"
+          tabIndex={0}
+          onClick={this.handleCount}
+        >
           {count}
         </div>
         <div className="userDelete">
@@ -38,6 +49,7 @@ UserItem.propTypes = {
     count: PropTypes.number,
   }).isRequired,
   onDelete: PropTypes.func.isRequired,
+  addCount: PropTypes.func.isRequired,
 };
 
 export default UserItem;

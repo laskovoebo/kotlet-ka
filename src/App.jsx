@@ -42,11 +42,24 @@ class App extends Component {
     });
   }
 
+  handleCount = (id, currentCount) => {
+    const { users } = this.state;
+    const countUser = users
+      .map(user => (user.id === id ? ({ ...user, count: currentCount + 1 }) : user));
+    this.setState({
+      users: countUser,
+    });
+  }
+
   render() {
     const { users } = this.state;
     return (
       <>
-        <HeaderTable items={users} handleDelete={this.handleDelete} />
+        <HeaderTable
+          items={users}
+          handleDelete={this.handleDelete}
+          handleCount={this.handleCount}
+        />
         <FormUser onSubmit={this.handleSubmit} />
       </>
     );
