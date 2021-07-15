@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './style/App.css';
 import HeaderTable from './HeaderTable';
 import FormUser from './FormUser';
+import Popup from './Popup';
 
 class App extends Component {
   constructor(props) {
@@ -69,6 +70,7 @@ class App extends Component {
     const { users } = this.state;
     return (
       <>
+        <Popup />
         <HeaderTable
           items={users}
           handleDelete={this.handleDelete}

@@ -1,0 +1,39 @@
+.popup {
+    position: fixed;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    background-color: rgba(0,0,0, 0.5);
+}
+
+.confirmPopup {
+    position: fixed;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, 0.5);
+    border: 1px solid red;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.popup.popup_opened{
+    display: flex;
+}
+
+.popupContainer {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    min-width: 430px;
+    max-width: 500px;
+    border-radius: 10px;
+    align-self: center;
+}
